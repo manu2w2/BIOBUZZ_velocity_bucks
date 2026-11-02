@@ -15,7 +15,7 @@ import org.firstinspires.ftc.teamcode.subsystems.IntakeSubsystem;
 public class TeleOpMain extends CommandOpMode {
 
   private DriveSubsystem driveSubsystem;
-  private IntakeSubsystem intakeSubsystem;
+  //private IntakeSubsystem intakeSubsystem;
   private GamepadEx driverGamepad;
 
   @Override
@@ -25,7 +25,7 @@ public class TeleOpMain extends CommandOpMode {
 
     // 2. Inicializar Subsistemas
     driveSubsystem = new DriveSubsystem(hardwareMap);
-    intakeSubsystem = new IntakeSubsystem(hardwareMap);
+    //intakeSubsystem = new IntakeSubsystem(hardwareMap);
 
     // 3. Asignar Comando por defecto para el chasis
     driveSubsystem.setDefaultCommand(new DriveCommand(
@@ -37,13 +37,13 @@ public class TeleOpMain extends CommandOpMode {
 
     // 4. Asignar Eventos a los Botones para el Intake
     // Al mantener A -> Tragar; Al soltar A -> Parar
-    new GamepadButton(driverGamepad, GamepadKeys.Button.A)
-      .whenPressed(new InstantCommand(intakeSubsystem::intake, intakeSubsystem))
-      .whenReleased(new InstantCommand(intakeSubsystem::stop, intakeSubsystem));
+   // new GamepadButton(driverGamepad, GamepadKeys.Button.A)
+     // .whenPressed(new InstantCommand(intakeSubsystem::intake, intakeSubsystem))
+      //.whenReleased(new InstantCommand(intakeSubsystem::stop, intakeSubsystem));
 
     // Al mantener B -> Expulsar; Al soltar B -> Parar
-    new GamepadButton(driverGamepad, GamepadKeys.Button.B)
-      .whenPressed(new InstantCommand(intakeSubsystem::outtake, intakeSubsystem))
-      .whenReleased(new InstantCommand(intakeSubsystem::stop, intakeSubsystem));
+   // new GamepadButton(driverGamepad, GamepadKeys.Button.B)
+    //  .whenPressed(new InstantCommand(intakeSubsystem::outtake, intakeSubsystem))
+     // .whenReleased(new InstantCommand(intakeSubsystem::stop, intakeSubsystem));
   }
 }
